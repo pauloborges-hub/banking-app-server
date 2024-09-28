@@ -1,10 +1,10 @@
+// ROUTER apenas redireciona para url, a parte de lógica das requisições HTTP é feita pela CONTROLLER da aplicação
 const { Router } = require('express');
+const {getUsers} = require('../controllers/user');
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send('get request');
-});
+router.get('/', getUsers);
 
 router.patch('/', (req, res) => {
     res.send('patch request');
