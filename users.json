@@ -1,12 +1,1 @@
-[
-    {
-        "name": "Paulo",
-        "CPF": "03789283096",
-        "balance": "100"
-    },
-    {
-        "name": "Amanda",
-        "CPF": "05066027025",
-        "balance": "500"
-    }
-]
+[{"id":"03789283096","name":"Paulo","balance":850},{"id":"05066027025","name":"Amanda","balance":0}]
