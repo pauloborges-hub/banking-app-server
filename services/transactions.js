@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function withdrawalBalanceService(withdrawalValue, id) {
+function withdrawalService(withdrawalValue, id) {
     let users = JSON.parse(fs.readFileSync('users.json'));
     const modifiedIndex = users.findIndex((user) => {
         return (user.id === id)
@@ -14,6 +14,18 @@ function withdrawalBalanceService(withdrawalValue, id) {
     fs.writeFileSync('users.json', JSON.stringify(users));
 }
 
+function depositService(withdrawalValue, id) {
+    let users = JSON.parse(fs.readFileSync('users.json'));
+    const modifiedIndex = users.findIndex((user) => {
+        return (user.id === id)
+    });
+
+    users[modifiedIndex].balance += withdrawalValue.balance;
+
+    fs.writeFileSync('users.json', JSON.stringify(users));
+}
+
 module.exports = {
-    withdrawalBalanceService
+    withdrawalService,
+    depositService
 }

@@ -1,6 +1,6 @@
 // ROUTER apenas redireciona para url, a parte de lógica das requisições HTTP é feita pela CONTROLLER da aplicação
 const { Router } = require('express');
-const { withdrawalBalanceController } = require('../controllers/transactions');
+const { withdrawalController, depositController } = require('../controllers/transactions');
 
 const router = Router();
 
@@ -16,6 +16,7 @@ const router = Router();
 //     res.send('delete request');
 // });
 
-router.patch('/:id', withdrawalBalanceController);
+router.patch('/withdrawal/:id', withdrawalController);
+router.patch('/deposit/:id', depositController);
 
 module.exports = router;
